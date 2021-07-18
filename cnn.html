@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+      <meta charset="utf-8">
+    <title>CNN Algorithm - Face Mask Detection</title>
+    <base >
+
+          <meta name="robots" content="index,follow">
+      <meta name="description" content="algorithm, verification, identification, ICAO frontal image check, engine, deep learning, accuracy, speed, face detection, facial analysis, gender, age, CNN, facial algorithm, face recognition, facial recognition, Gesichtserkennung">
+      <meta name="generator" content="Contao Open Source CMS">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="system/modules/pct_customelements/assets/font-awesome/4.7.0/css/font-awesome.min.html">
+<link rel="stylesheet" href="files/tao/css/icons.min.css">
+<link rel="stylesheet" href="assets/css/8380cc5a2707.css">
+        <script src="assets/js/729c4599091e.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="files/tao/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="files/tao/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="files/tao/img/favicon-16x16.png">
+<link rel="manifest" href="files/tao/img/%20site.html">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60140283-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-60140283-1');
+</script>
+
+        
+      
+</head>
+<body id="top" class="win other  tao-no-sidebar tao-fullwidth home tagline-no-border icon-code-3" itemscope itemtype="http://schema.org/WebPage">
+
+
+	
+	<div class="page">
+
+					<header class="page-header">
+				
+<div class="header-bar">
+	<div class="header-bar-inner"><ul class="icon-links ce_rsce_tao_icon_links header-links">
+			<li>
+			<a href="future-work.html" data-icon="&#x5d;" style="color: #005547;">
+				<span class="icon-links-label"><a href="future-work.html" class="email">maskupservices@gmail.com</a></span>
+			</a>
+		</li>
+			<span class="icon-links-label" style="color: #005547;">Contact : +91-9079342218		,</span>
+		</li>
+			<li>
+			
+				<span class="icon-links-label" style="color: #005547;"> +91-7889764944		,</span>
+			
+		</li>
+			<li>
+	
+				<span class="icon-links-label" style="color: #005547;">+91-7877472083	,</span>
+			
+		</li>
+		<li>
+			
+				<span class="icon-links-label" style="color: #005547;">+91-9929435600	</span>
+		</li>
+	</ul>
+<ul class="icon-links ce_rsce_tao_icon_links header-links -right -secondary">
+			<li>
+			<a href="future-work.html" data-icon="&#x54;" style="color: #005547; background-color: #55acee" target="_blank">
+				<span class="icon-links-label">Twitter</span>
+			</a>
+		</li>
+			<li>
+			<a href="future-work.html" data-icon="&#x4c;" style="color: #005547; background-color: #0077b5" target="_blank">
+				<span class="icon-links-label">LinkedIn</span>
+			</a>
+		</li>
+	</ul>
+
+</div>
+</div>
+<div class="header-navigation">
+	<div class="header-navigation-inner">
+
+<h1 class="ce_rsce_tao_logo logo">
+	<a href="#">
+								
+
+<img src="C:/Users/hp/Desktop/project front end/front 1/maskup/maskup1.jpg" width="268" height="109" alt="MaskUp" itemprop="image">
+
+
+			</a>
+</h1>
+
+<nav class="mod_rocksolid_mega_menu main-navigation block" id="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+  
+  <a href="cnn.html#skipNavigation78" class="invisible">Skip navigation</a>
+
+  <ul class="level_1">
+
+	
+				
+		<li class="home tagline-no-border first">
+
+
+							<a href="index.html" title="Home" class="active home tagline-no-border sibling" itemprop="url"><span itemprop="name">Home</span>
+			
+			
+							</a>
+			
+			
+		</li>
+
+	
+				
+		<li class="submenu home tagline-no-border sibling">
+
+							<a href="applications-overview.html" title="Applications" class="active home tagline-no-border sibling" itemprop="url"><span itemprop="name">Applications</span>
+			
+			
+							</a>
+
+		</li>
+
+	
+				
+		<li class="submenu home tagline-no-border sibling">
+
+							<a href="cnn.html" title="Algorithms" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Algorithms</span>
+			
+			
+							</a>
+			
+			<ul class="level_2">
+
+	
+				
+		<li class="home tagline-no-border icon-code-3 first">
+
+							<a href="cnn.html" title="CNN" class="home tagline-no-border icon-code-3 first" itemprop="url"><span itemprop="name">CNN</span>
+			
+			
+							</a>
+			
+			
+		</li>
+
+	
+				
+		<li class="home tagline-no-border icon-chart-area">
+
+							<a href="viola.html" title="Viola Jones Algorithm" class="home tagline-no-border icon-chart-area" itemprop="url"><span itemprop="name">Viola Jones Algorithm</span>
+			
+			
+							</a>
+			
+			
+		</li>
+
+	
+				
+		<li class="home tagline-no-border icon-book-4 last">
+
+							<a href="hog.html" title="HOG" class="home tagline-no-border icon-book-4 last" itemprop="url"><span itemprop="name">HOG</span>
+			
+			
+							</a>
+			
+			
+		</li>
+
+	
+</ul>
+
+		</li>
+
+	
+				
+		<li class="submenu home tagline-no-border sibling">
+
+							<a href="team.html" title="Team" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Team</span>
+			
+			
+							</a>
+			
+			
+</ul>
+  <a id="skipNavigation78" class="invisible">&nbsp;</a>
+
+</nav>
+</div>
+</div>
+<div class="main-navigation-mobile">
+
+<nav class="mod_navigation mobnav block" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+
+
+  
+  <a href="cnn.html#skipNavigation11" class="invisible">Skip navigation</a>
+
+  
+<ul class="level_1">
+            <li class="submenu home tagline-no-border sibling"><a href="index.html" title="Home" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Home</span></a>
+            
+            <li class="submenu home tagline-no-border sibling"><a href="applications-overview.html" title="Applications" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Applications</span></a>
+
+             <li class="submenu home tagline-no-border sibling"><a href="cnn.html" title="Algorithms" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Algorithms</span></a>
+
+             <li class="submenu home tagline-no-border sibling"><a href="team.html" title="Team" class="submenu home tagline-no-border sibling" aria-haspopup="true" itemprop="url"><span itemprop="name">Team</span></a>
+
+                
+      </ul>
+</li>
+
+  <a id="skipNavigation11" class="invisible">&nbsp;</a>
+
+</nav>
+<!-- indexer::continue -->
+
+</div>			</header>
+		
+		
+<div class="custom">
+      
+<div id="Tagline">
+  <div class="inside">
+    
+<div class="tagline">
+<div class="tagline-inner">
+</div>
+</div>  </div>
+</div>
+  </div>
+
+		<div class="content-wrapper">
+
+			<section role="main" class="main-content">
+
+				
+
+  <div class="mod_article first last block" id="article-351">
+    
+          
+<div class="centered-wrapper ce_rsce_tao_centered_wrapper_start first  -color-inverted" style="background-color: #005547; ">
+
+	
+	<div class="centered-wrapper-inner">
+
+<div class="headline-box  ce_rsce_tao_headline_box">
+				<h2 class=" " style="">CNN</h2>
+				<h3 class="" style="">A class of Deep Neural Network most widely used approach to analyze visual imagery.</h3>
+		</div>
+</div>
+</div>
+
+<div class="centered-wrapper ce_rsce_tao_centered_wrapper_start  -border-top" style="border-top-color: #b2b9c4;border-top-width: 1px; ">
+
+	
+	<div class="centered-wrapper-inner">
+<div class="rs-columns ce_rs_columns_start margin-bottom-xs">
+
+	<div class="ce_rs_column_start  rs-column -large-col-3-2 -large-first -large-first-row -medium-col-3-2 -medium-first -medium-first-row -small-col-1-1 -small-first -small-last -small-first-row">
+
+	
+<div class="ce_text margin-top-xs block">
+
+        
+  
+      <p>Mask Up - face mask detection software makes use of CNN i.e. Convolutional Neural Network. CNN has multiple convolution layers that are used to detect the facial features through the lines and edges detection. Convolution is a mathematical function / translation / combination of input data with the use of filter or kernel to provide a feature map.</p>
+<p>CNN consists of input layer for taking inputs, multiple hidden layers for convolution processing and output layer for generating output.</p>
+<h3 class="Default"><strong>Demystification</strong></h3>
+<p>Machine Learning is one of the hot topics of the world. Image classifier is a part of machine learning. The most famous machine learning algorihtm for image classification is Convolutional Neyral Network i.e. CNN.</p>
+<p>So, basically what CNN is - as we know its a machine learning algorithm for machines to understand the features of the image with foresight and remember the features to guess whether the name of the new image fed to the machine.</p>
+<p>Training data sets are required to train the CNN model with the images. The more the training data sets, the more better will be the recognition capability of the software.<br> <br> Now after getting the data set, the preprocessing of data is required and providing labels to each image to be able to detect the data from the test data.<br> <br>The construction of CNN is a multi-layered feed-forward neural network, made by assembling many unseen layers on top of each other in a particular order. It is the sequential design that gives permission to CNN to learn hierarchical attributes. In CNN, some of them followed by grouping layers and hidden layers are typically convolutional layers followed by activation layers.</p>
+<p class="Default">Residual network in CNN consists of a 3*3 convolution layer and a batch normalisation layer. IT also have skip connections called the identity connections, where the previous layers add up to the next layer, forming a residual block. Such residual blocks are repeated to form a residual network.<br><br>They have the ability to solve vanishing and exploding gradients when adding more layers to an already deep neural network. Residual Networks makes use of reLU activaion functions.<br><br>Activation functions decides whether a neuron should be activated or not, by calculating the weighted input and adding bias to it. Its purpose is to bring non-linearity in the output of neuron.</p>  
+  
+  
+
+</div>
+</div>
+<div class="ce_rs_column_start  rs-column -large-col-3-1 -large-last -large-first-row -medium-col-3-1 -medium-last -medium-first-row -small-col-1-1 -small-first -small-last">
+
+	
+<section class="ce_accordionStart margin-top-xs ce_accordion block">
+
+</section>
+
+<section class="ce_accordionStart ce_accordion block">
+
+  <div class="toggler">
+    Benefits  </div>
+
+  <div class="accordion"><div>
+
+<div class="ce_text block">
+
+        
+  
+      <ul>
+<li class="first"> Weight sharing</li>
+<li class="first">CNNs outperform NNs on conventional image recognition tasks and many other tasks</li>
+<li class="first">For a completely new task / problem CNNs are very good feature extractors.</li>
+</ul>  
+  
+  
+
+</div>
+
+  </div></div>
+
+</section>
+
+<section class="ce_accordionStart ce_accordion block">
+
+  <div class="toggler">
+    Limitations  </div>
+
+  <div class="accordion"><div>
+
+<div class="ce_text block">
+
+         <ul>
+<li class="first">Fails to understand the contents of an image.</li>
+<li class="first">This limitation is more than evident when it comes to practical applications.</li>
+<li class="first">Several studies have shown that CNNs trained on ImageNet and other popular datasets fail to detect objects when they see them under different lighting conditions and from new angles.</li>
+</ul>  
+  
+		
+	
+</section>
+</div>
+</div>
+    
+      </div>
+
+
+				
+			</section>
+
+			
+		</div>
+
+		
+					<footer class="page-footer">
+				
+<div class="centered-wrapper ce_rsce_tao_centered_wrapper_start  -border-top" style=" ">
+
+	
+	<div class="centered-wrapper-inner">
+
+<!-- indexer::stop -->
+<p class="footer-copyright ce_rsce_tao_footer_copyright">
+	© Mask Up - Face Mask Detection Software	</p>
+<!-- indexer::continue -->
+
+<!-- indexer::stop -->
+<nav class="mod_customnav footer-links block" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+  
+  <a href="cnn.html#skipNavigation91" class="invisible">Skip navigation</a>
+
+ 
+
+  <a id="skipNavigation91" class="invisible">&nbsp;</a>
+
+</nav>
+<!-- indexer::continue -->
+</div>
+</div>
+
+<!-- indexer::stop -->
+<a href="cnn.html#top" class="footer-top-link ce_rsce_tao_footer_top">
+		<span>up</span> <span>up</span>
+</a>
+<!-- indexer::continue -->
+			</footer>
+		
+	</div>
+
+	
+
+  
+<script src="assets/jquery-ui/js/jquery-ui.min.js"></script>
+<script>
+  jQuery(function($) {
+    $(document).accordion({
+      // Put custom options here
+      heightStyle: 'content',
+      header: '.toggler',
+      collapsible: true,
+      active: false,
+      create: function(event, ui) {
+        ui.header.addClass('active');
+        $('.toggler').attr('tabindex', 0);
+      },
+      activate: function(event, ui) {
+        ui.newHeader.addClass('active');
+        ui.oldHeader.removeClass('active');
+        $('.toggler').attr('tabindex', 0);
+      }
+    });
+  });
+</script>
+
+<script src="assets/colorbox/js/colorbox.min.js"></script>
+<script>
+  jQuery(function($) {
+    $('a[data-lightbox]').map(function() {
+      $(this).colorbox({
+        // Put custom options here
+        loop: false,
+        rel: $(this).attr('data-lightbox'),
+        maxWidth: '95%',
+        maxHeight: '95%'
+      });
+    });
+  });
+</script>
+
+<script src="assets/tablesorter/js/tablesorter.min.js"></script>
+<script>
+  jQuery(function($) {
+    $('.ce_table .sortable').each(function(i, table) {
+      $(table).tablesorter();
+    });
+  });
+</script>
+
+<script src="assets/mediaelement/js/mediaelement-and-player.min.js"></script>
+<script>
+  jQuery(function($) {
+    $('video:not(.no-mejs),audio:not(.no-mejs)').filter(function() {
+        return $(this).parents('picture').length === 0;
+    }).mediaelementplayer({videoWidth:'100%',videoHeight:'100%',
+      // Put custom options here
+      pluginPath: '/assets/mediaelement/plugins/'
+    });
+  });
+</script>
+
+<script src="assets/mediaelement/js/mediaelement-and-player.min.js"></script>
+<script>
+  (function() {
+    var e = document.querySelectorAll(':not(picture) > video:not(.no-mejs), :not(picture) > audio:not(.no-mejs)');
+    for (var i=0; i<e.length; i++) {
+      new MediaElementPlayer(e[i], {
+        // Put custom options here
+        videoWidth:'100%',videoHeight:'100%',pluginPath: '/assets/mediaelement/plugins/'
+      });
+    }
+  })();
+</script>
+
+<script src="assets/swipe/js/swipe.min.js"></script>
+<script>
+  (function() {
+    var e = document.querySelectorAll('.content-slider, .slider-control'), c, i;
+    for (i=0; i<e.length; i+=2) {
+      c = e[i].getAttribute('data-config').split(',');
+      new Swipe(e[i], {
+        // Put custom options here
+        'auto': parseInt(c[0]),
+        'speed': parseInt(c[1]),
+        'startSlide': parseInt(c[2]),
+        'continuous': parseInt(c[3]),
+        'menu': e[i+1]
+      });
+    }
+  })();
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+/**
+ * Revolution Slider Template file
+ * For more settings see: http://www.orbis-ingenieria.com/code/documentation/documentation.html#!/documenter_cover
+ */
+jQuery(document).ready(function() 
+{	
+	// add class tp-resizeme to nested elements
+	jQuery('').find('.tp-caption,.caption').find('*').addClass('tp-resizeme');
+	
+	// init slider  
+	var api = jQuery('').show().revolution({
+		// general settings
+		delay:				,
+		startwidth:			,
+		startheight:		,
+		startWithSlide:		,
+		
+				
+				
+		// add controls
+		navigationType:		'',
+		navigationStyle:	'',
+		navigationArrows:	'',
+			
+		// thumbnails
+				
+		touchenabled:"on",
+		onHoverStop: 		'',
+		
+		swipe_velocity: 0.7,
+		swipe_min_touches: 1,
+		swipe_max_touches: 1,
+		drag_block_vertical: false,
+		
+		// arrow navigation alignment
+		soloArrowLeftHalign:"left",
+		soloArrowLeftValign:"center",
+		soloArrowLeftHOffset:20,
+		soloArrowLeftVOffset:0,
+		
+		soloArrowRightHalign:"right",
+		soloArrowRightValign:"center",
+		soloArrowRightHOffset:20,
+		soloArrowRightVOffset:0,
+		
+		// lopp settings
+		stopAtSlide: ,
+		stopAfterLoops: ,
+		
+		// shuffle
+				
+		// overlay
+				
+		shadow:0
+	});
+});
+
+/* ]]> */
+</script>
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+/**
+ * Fix the z-index bug
+ */
+jQuery(document).ready(function() 
+{
+	var api = jQuery('');
+	api.bind("revolution.slide.onchange",function (e) 
+	{
+		var arrSlides = jQuery(e.currentTarget).find('.slide');
+		if(arrSlides == undefined || arrSlides.length < 1)
+		{
+			return;
+		}
+		var index  = Math.round(api.revcurrentslide() + 1);
+		if(index >= api.revmaxslide())
+		{
+			index = 0;
+		}
+		
+		arrSlides.css('z-index',10);
+		jQuery(arrSlides[index]).css({'z-index':20});
+	});
+});
+
+/* ]]> */
+</script>
+
+
+<script>
+  (function() {
+    var p = document.querySelector('p.error') || document.querySelector('p.confirm');
+    if (p) {
+      p.scrollIntoView();
+    }
+  })();
+</script>
+
+<script src="assets/highlight/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+
+<script src="files/tao/js/script.js"></script>
+<script type="text/javascript" src="../secure.navy9gear.com/js/202541.js" ></script>
+<noscript><img alt="" src="../secure.navy9gear.com/202541.html" style="display:none;" /></noscript>
+
+</body>
+</html>
